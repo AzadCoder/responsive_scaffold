@@ -5,7 +5,6 @@ class LayoutExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveScaffold(
-      title: Text('Responsive Layout Example'),
       drawer: ListView(
         children: <Widget>[
           ListTile(
@@ -26,7 +25,6 @@ class LayoutExample extends StatelessWidget {
           ),
         ],
       ),
-      endIcon: Icons.filter_list,
       endDrawer: ListView(
         children: <Widget>[
           ListTile(
@@ -60,10 +58,10 @@ class LayoutExample extends StatelessWidget {
           ),
         ],
       ),
-      trailing: IconButton(
-        icon: Icon(Icons.search),
-        onPressed: () {},
-      ),
+      // trailing: IconButton(
+      //   icon: Icon(Icons.search),
+      //   onPressed: () {},
+      // ),
       body: Center(
         child: RaisedButton(
           child: Text('Close'),

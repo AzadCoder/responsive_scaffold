@@ -5,24 +5,25 @@ class ResponsiveScaffold extends StatelessWidget {
     this.scaffoldKey,
     this.drawer,
     this.endDrawer,
-    this.title,
+    // this.title,
     this.body,
-    this.trailing,
+    // this.trailing,
     this.floatingActionButton,
-    this.menuIcon,
-    this.endIcon,
+    // this.menuIcon,
+    // this.endIcon,
     this.kTabletBreakpoint = 720.0,
     this.kDesktopBreakpoint = 1440.0,
-    this.appBarElevation,
+    // this.appBarElevation,
+    this.appBar,
   });
 
   final Widget drawer, endDrawer;
-
-  final Widget title;
+  final Widget appBar;
+  // final Widget title;
 
   final Widget body;
 
-  final Widget trailing;
+  // final Widget trailing;
 
   final Widget floatingActionButton;
 
@@ -30,9 +31,9 @@ class ResponsiveScaffold extends StatelessWidget {
   final kDesktopBreakpoint;
   final _drawerWidth = 304.0;
 
-  final IconData menuIcon, endIcon;
+  // final IconData menuIcon, endIcon;
 
-  final double appBarElevation;
+  // final double appBarElevation;
 
   final Key scaffoldKey;
 
@@ -59,16 +60,7 @@ class ResponsiveScaffold extends StatelessWidget {
                     Expanded(
                       child: Scaffold(
                         key: scaffoldKey,
-                        appBar: AppBar(
-                          elevation: appBarElevation,
-                          automaticallyImplyLeading: false,
-                          title: title,
-                          actions: <Widget>[
-                            if (trailing != null) ...[
-                              trailing,
-                            ],
-                          ],
-                        ),
+                        appBar: appBar,
                         body: Row(
                           children: <Widget>[
                             Expanded(
@@ -112,17 +104,18 @@ class ResponsiveScaffold extends StatelessWidget {
                       child: drawer,
                     ),
                   ),
-            appBar: AppBar(
-              elevation: appBarElevation,
-              automaticallyImplyLeading: false,
-              title: title,
-              leading: _MenuButton(iconData: menuIcon),
-              actions: <Widget>[
-                if (trailing != null) ...[
-                  trailing,
-                ],
-              ],
-            ),
+            appBar: appBar,
+            // appBar: AppBar(
+            //   elevation: appBarElevation,
+            //   automaticallyImplyLeading: false,
+            //   title: title,
+            //   leading: _MenuButton(iconData: menuIcon),
+            //   actions: <Widget>[
+            //     if (trailing != null) ...[
+            //       trailing,
+            //     ],
+            //   ],
+            // ),
             body: SafeArea(
               right: false,
               bottom: false,
@@ -174,20 +167,21 @@ class ResponsiveScaffold extends StatelessWidget {
                     child: endDrawer,
                   ),
                 ),
-          appBar: AppBar(
-            elevation: appBarElevation,
-            automaticallyImplyLeading: false,
-            leading: _MenuButton(iconData: menuIcon),
-            title: title,
-            actions: <Widget>[
-              if (trailing != null) ...[
-                trailing,
-              ],
-              if (endDrawer != null) ...[
-                _OptionsButton(iconData: endIcon),
-              ]
-            ],
-          ),
+          appBar: appBar,
+          // appBar: AppBar(
+          //   elevation: appBarElevation,
+          //   automaticallyImplyLeading: false,
+          //   leading: _MenuButton(iconData: menuIcon),
+          //   title: title,
+          //   actions: <Widget>[
+          //     if (trailing != null) ...[
+          //       trailing,
+          //     ],
+          //     if (endDrawer != null) ...[
+          //       _OptionsButton(iconData: endIcon),
+          //     ]
+          //   ],
+          // ),
           body: body,
           floatingActionButton: floatingActionButton,
           floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
